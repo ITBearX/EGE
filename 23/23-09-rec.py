@@ -9,19 +9,16 @@
 '''
 
 
-def get_num_ways(number, start, avoid):
-
-    if number < start or number == avoid:
+def get_num_ways(end, start, avoid):
+    if end < start or start == avoid:
         return 0
-    if number == start:
+    if end == start:
         return 1
-
-    num_ways = get_num_ways(number-1, start, avoid)
-    if number % 2 == 0:
-        num_ways += get_num_ways(number//2, start, avoid)
-    if number % 3 == 0:
-        num_ways += get_num_ways(number//3, start, avoid)
-    return num_ways
+    return (
+        get_num_ways(end, start + 1, avoid) +
+        get_num_ways(end, start * 2, avoid) +
+        get_num_ways(end, start * 3, avoid)
+    )
 
 
 print(get_num_ways(45, 14, 20) * get_num_ways(14, 2, 20))

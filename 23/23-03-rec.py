@@ -7,15 +7,12 @@
 '''
 
 
-def get_num_ways(number, start):
-    if number < start:
+def get_num_ways(end, start):
+    if end < start:
         return 0
-    if number == start:
+    if end == start:
         return 1
-    num_ways = get_num_ways(number - 2, start)
-    if number % 3 == 0:
-        num_ways += get_num_ways(number // 3, start)
-    return num_ways
+    return get_num_ways(end, start+2) + get_num_ways(end, start*3)
 
 
 print(get_num_ways(28, 2))

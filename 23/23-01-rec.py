@@ -9,14 +9,12 @@
 '''
 
 
-def get_num_ways(number, start):
-    if number < start:
+def get_num_ways(end, start):
+    if end < start:
         return 0
-    if number == start:
+    if end == start:
         return 1
-    if number % 2 == 0:
-        return get_num_ways(number//2, start) + get_num_ways(number-1, start)
-    return get_num_ways(number - 1, start)
+    return get_num_ways(end, start*2) + get_num_ways(end, start+1)
 
 
 print(get_num_ways(45, 18) * get_num_ways(18, 1))
