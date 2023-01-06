@@ -2,7 +2,9 @@
 Определить максимальную длину последовательности одинаковых символов в файле
 '''
 
-with open("data/24-01.txt") as f:
+FILENAME = "data/24-01.txt"
+
+with open(FILENAME) as f:
     line = f.readline()
     series = []
     cnt = 1
