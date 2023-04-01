@@ -19,3 +19,5 @@ sys.setrecursionlimit(2000)
 
 </p>
 </details>
+
+Приведены также решения данной задачи на языке Haskell
