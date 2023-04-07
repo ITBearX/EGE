@@ -7,13 +7,13 @@
 FILENAME = "data/24-16.txt"
 
 with open(FILENAME) as f:
-    num_str, max_num = "0", 0
+    num_str, max_num = "", 0
     for char in f.readline():
         if char.isdigit():
             num_str += char
-        else:
+        elif num_str != "":
             num = int(num_str)
             if max_num < num < 1e9:
                 max_num = num
-            num_str = "0"
+            num_str = ""
     print(max_num)
