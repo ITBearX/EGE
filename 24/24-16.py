@@ -4,14 +4,12 @@
 Найти самое большое число, которое меньше чем 10**9
 '''
 
-from string import digits
-
 FILENAME = "data/24-16.txt"
 
 with open(FILENAME) as f:
     num_str, max_num = "0", 0
     for char in f.readline():
-        if char in digits:
+        if char.isdigit():
             num_str += char
         else:
             num = int(num_str)
